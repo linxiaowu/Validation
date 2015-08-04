@@ -9,5 +9,6 @@
     <string name="validator_hex">输入只能是十六进制数字！</string>
     <string name="validator_regexp">输入不合法！</string>
     <string name="validator_phone">非法电话号码！</string>
+    <string name="validator_num_or_letters">只允许字母和数字，长度6-18</string>
 
 </resources>

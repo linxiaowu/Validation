@@ -12,6 +12,7 @@ import com.throrinstudio.android.common.libs.validator.validate.ConfirmValidate;
 import com.throrinstudio.android.common.libs.validator.validate.OrTwoRequiredValidate;
 import com.throrinstudio.android.common.libs.validator.validator.EmailValidator;
 import com.throrinstudio.android.common.libs.validator.validator.NotEmptyValidator;
+import com.throrinstudio.android.common.libs.validator.validator.NumOrLettersValidator;
 import com.throrinstudio.android.common.libs.validator.validator.UrlValidator;
 
 
@@ -50,6 +51,11 @@ public class MainActivity extends Activity {
         //确认密码
         ConfirmValidate confirmValidate = new ConfirmValidate(edtNotPassword1, edtNotPassword2);
 
+        //匹配密码
+        NumOrLettersValidator numOrLettersValidator = new NumOrLettersValidator(this);
+        Validate numOrLettersValidate = new Validate(edtNotPassword1);
+        numOrLettersValidate.addValidator(numOrLettersValidator);
+
         //网址
         UrlValidator urlValidator = new UrlValidator(this);
         Validate urlValidate = new Validate(edtUrl);
@@ -65,6 +71,7 @@ public class MainActivity extends Activity {
         form.addValidates(emailValidate);
         form.addValidates(confirmValidate);
         form.addValidates(urlValidate);
+        form.addValidates(numOrLettersValidate);
 
 
     }
